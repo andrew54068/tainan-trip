@@ -230,6 +230,20 @@
       .trip-facts { gap: 8px 12px; }
       .footer-inner { flex-wrap: wrap; gap: 0; }
     }
+
+    /* 行程進場動畫 */
+    @media (prefers-reduced-motion: no-preference) {
+      .stop.reveal-ready {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      .stop.reveal-ready.revealed {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity .4s ease, transform .4s ease;
+        transition-delay: var(--reveal-delay, 0s);
+      }
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .day-nav a { transition: none; }
@@ -404,6 +418,30 @@
         try {
           localStorage.setItem(key, nextTheme);
         } catch (e) {}
+      });
+    }());
+  </script>
+
+  <script>
+    (function () {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      var stops = document.querySelectorAll(".stop");
+      stops.forEach(function (stop, index) {
+        stop.classList.add("reveal-ready");
+        stop.style.setProperty("--reveal-delay", (index * 0.08) + "s");
+      });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12 });
+
+      stops.forEach(function (stop) {
+        observer.observe(stop);
       });
     }());
   </script>

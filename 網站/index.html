@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f2e9">
+  <meta name="theme-color" content="#000000">
   <meta name="description" content="留給自己的台南小旅行。兩天一夜，慢慢吃、慢慢走；時間與地點皆為可替換的示意資料。">
   <title>台南小旅行</title>
   <style>
     /* 全部樣式都在此檔案內，沒有外部字型、圖片、套件或網路請求。 */
     :root {
-      color-scheme: light;
-      --paper: #f6f2e9;
-      --card: #fffdfa;
-      --ink: #263d36;
-      --muted: #62675d;
+      color-scheme: dark;
+      --paper: #000000;
+      --card: #000000;
+      --ink: #ffffff;
+      --muted: #d7d7d7;
       --accent: #a3432c;
-      --line: #deded1;
-      --soft: #efe6d6;
+      --line: #444444;
+      --soft: #000000;
       --radius: 20px;
     }
     * { box-sizing: border-box; }
@@ -26,7 +26,7 @@
       background: var(--paper);
       color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
-      font-size: 17px;
+      font-size: 51px;
       line-height: 1.75;
       -webkit-text-size-adjust: 100%;
     }
@@ -37,21 +37,21 @@
     h1 {
       position: relative;
       margin: 0 0 14px;
-      font-size: clamp(32px, 7.8vw, 52px);
+      font-size: clamp(96px, 23.4vw, 156px);
       font-weight: 800;
       line-height: 1.3;
       letter-spacing: .03em;
     }
-    .intro { margin: 0; font-size: 18px; color: var(--muted); }
+    .intro { margin: 0; font-size: 54px; color: var(--muted); }
     .trip-facts { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; margin-top: 24px; }
-    .trip-facts span { font-size: 16px; font-weight: 600; }
+    .trip-facts span { font-size: 48px; font-weight: 600; }
     .trip-facts .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
     .trip-facts .badge {
       padding: 3px 11px;
       border: 1px solid #d7b6a7;
       border-radius: 6px;
       color: var(--accent);
-      font-size: 15px;
+      font-size: 45px;
       letter-spacing: .08em;
     }
     .notice {
@@ -60,8 +60,8 @@
       border-left: 3px solid var(--accent);
       border-radius: 0 10px 10px 0;
       background: var(--soft);
-      font-size: 16px;
-      color: #534b3d;
+      font-size: 48px;
+      color: #ffffff;
     }
     .notice strong { font-weight: 700; }
     .day-nav {
@@ -72,7 +72,7 @@
       border-bottom: 1px solid var(--line);
       background: var(--paper);
     }
-    .nav-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .nav-inner { display: grid; grid-template-columns: 1fr; gap: 10px; }
     .day-nav a {
       display: flex;
       justify-content: center;
@@ -88,7 +88,7 @@
       transition: background .15s ease, color .15s ease;
     }
     .day-nav a:hover, .day-nav a:focus-visible { background: var(--ink); color: var(--card); }
-    .day-nav .nav-number { font-size: 14px; font-variant-numeric: tabular-nums; opacity: .75; }
+    .day-nav .nav-number { font-size: 42px; font-variant-numeric: tabular-nums; opacity: .75; }
     main { padding-top: 32px; padding-bottom: 28px; }
     .day { margin-bottom: 38px; scroll-margin-top: 12px; }
     .section-head { display: flex; align-items: center; gap: 15px; margin-bottom: 22px; }
@@ -101,12 +101,12 @@
       border-radius: 50%;
       color: var(--accent);
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 30px;
+      font-size: 90px;
       font-style: italic;
       line-height: 1;
     }
-    .section-head h2 { margin: 0; font-size: 26px; line-height: 1.4; letter-spacing: .04em; }
-    .section-head p { margin: 4px 0 0; font-size: 16px; color: var(--muted); }
+    .section-head h2 { margin: 0; font-size: 78px; line-height: 1.4; letter-spacing: .04em; }
+    .section-head p { margin: 4px 0 0; font-size: 48px; color: var(--muted); }
     .stops { position: relative; list-style: none; margin: 0; padding: 0 0 0 22px; }
     .stops::before { content: ""; position: absolute; left: 4px; top: 30px; bottom: 30px; width: 1px; background: #c9c8b7; }
     .stop {
@@ -134,23 +134,23 @@
     time {
       display: inline-block;
       color: var(--accent);
-      font-size: 18px;
+      font-size: 54px;
       font-weight: 750;
       line-height: 1.5;
       letter-spacing: .03em;
       font-variant-numeric: tabular-nums;
     }
-    .stop-index { color: var(--muted); font-size: 14px; letter-spacing: .06em; white-space: nowrap; }
-    .stop h3 { margin: 0 0 6px; font-size: 21px; font-weight: 700; line-height: 1.5; }
-    .stop p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; overflow-wrap: anywhere; }
-    .day-end { margin: 17px 0 0 22px; color: var(--muted); font-size: 16px; }
+    .stop-index { color: var(--muted); font-size: 42px; letter-spacing: .06em; white-space: nowrap; }
+    .stop h3 { margin: 0 0 6px; font-size: 63px; font-weight: 700; line-height: 1.5; }
+    .stop p { margin: 0; color: var(--muted); font-size: 51px; line-height: 1.85; overflow-wrap: anywhere; }
+    .day-end { margin: 17px 0 0 22px; color: var(--muted); font-size: 48px; }
     .reminder { padding: 22px 24px; border: 1px dashed #c2c5b6; border-radius: var(--radius); }
-    .reminder h2 { margin: 0 0 8px; font-size: 19px; }
-    .reminder p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.85; }
+    .reminder h2 { margin: 0 0 8px; font-size: 57px; }
+    .reminder p { margin: 0; color: var(--muted); font-size: 48px; line-height: 1.85; }
     footer { padding: 0 0 max(28px, env(safe-area-inset-bottom)); }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px solid var(--line); }
-    footer p { margin: 0; color: var(--muted); font-size: 15px; }
-    footer a { display: inline-flex; align-items: center; min-height: 48px; font-size: 16px; white-space: nowrap; }
+    footer p { margin: 0; color: var(--muted); font-size: 45px; }
+    footer a { display: inline-flex; align-items: center; min-height: 48px; font-size: 48px; white-space: nowrap; }
     @media (min-width: 600px) {
       .hero { padding-top: 64px; padding-bottom: 32px; }
       .stop { padding: 22px 28px 24px; }
@@ -201,7 +201,6 @@
   <nav class="day-nav" aria-label="快速跳到行程">
     <div class="nav-inner wrap">
       <a href="#day-1"><span class="nav-number" aria-hidden="true">01</span>第一天 ↓</a>
-      <a href="#day-2"><span class="nav-number" aria-hidden="true">02</span>第二天 ↓</a>
     </div>
   </nav>
 
@@ -243,40 +242,7 @@
           <p>一起點幾道小吃分享，吃飽後回旅宿好好休息。</p>
         </li>
       </ol>
-      <p class="day-end">今晚住一晚，明天繼續慢慢逛。</p>
-    </section>
-
-    <section class="day" id="day-2" aria-labelledby="day-2-title">
-      <div class="section-head">
-        <span class="day-number" aria-hidden="true">02</span>
-        <div>
-          <h2 id="day-2-title">第二天</h2>
-          <p>留一點甜，再帶回一點回憶。</p>
-        </div>
-      </div>
-      <ol class="stops" aria-label="第二天的四站行程">
-        <li class="stop">
-          <div class="stop-top"><time datetime="09:00">09:00</time><span class="stop-index">第 1 站</span></div>
-          <h3>慢慢早午餐</h3>
-          <p>睡飽後悠閒吃一餐，整理好行李再出發。</p>
-        </li>
-        <li class="stop">
-          <div class="stop-top"><time datetime="11:00">11:00</time><span class="stop-index">第 2 站</span></div>
-          <h3>老街散步區</h3>
-          <p>逛逛小店和街景，挑一份喜歡的伴手禮。</p>
-        </li>
-        <li class="stop">
-          <div class="stop-top"><time datetime="14:00">14:00</time><span class="stop-index">第 3 站</span></div>
-          <h3>巷弄甜點店</h3>
-          <p>用一份甜點收尾，把這趟旅行最喜歡的片刻聊一遍。</p>
-        </li>
-        <li class="stop">
-          <div class="stop-top"><time datetime="16:30">16:30</time><span class="stop-index">第 4 站</span></div>
-          <h3>返程集合點</h3>
-          <p>確認大家與行李都到齊，預留交通時間後準備回家。</p>
-        </li>
-      </ol>
-      <p class="day-end">行程到這裡，下次再一起出發。</p>
+      <p class="day-end">今晚住一晚，好好休息。</p>
     </section>
 
     <aside class="reminder" aria-labelledby="reminder-title">
